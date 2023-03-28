@@ -1,0 +1,22 @@
+{
+  "name": "api-gateway",
+  "version": "1.0.0",
+  "description": "Provides a single endpoint to access the microservices.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r dotenv/config index",
+    "dev": "npx nodemon -r dotenv/config index"
+  },
+  "author": "Carlos Eduardo",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv-safe": "^8.2.0",
+    "express": "^4.18.2",
+    "express-http-proxy": "^1.6.3",
+    "helmet": "^6.0.1",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.0",
+    "morgan": "^1.10.0"
+  }
+}

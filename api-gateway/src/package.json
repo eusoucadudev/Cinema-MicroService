@@ -4,8 +4,8 @@
   "description": "Provides a single endpoint to access the microservices.",
   "main": "index.js",
   "scripts": {
-    "start": "node -r dotenv/config index",
-    "dev": "npx nodemon -r dotenv/config index"
+    "start": "node -r dotenv/config ./server/index",
+    "dev": "npx nodemon -r dotenv/config ./server/index"
   },
   "author": "Carlos Eduardo",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "helmet": "^6.0.1",
     "http": "^0.0.1-security",
     "jsonwebtoken": "^9.0.0",
+    "mongodb": "^5.2.0",
     "morgan": "^1.10.0"
   }
 }

@@ -1,6 +1,8 @@
 const schema = require("../schemas/movieSchema");
 const jwt = require("jsonwebtoken");
 
+const ADMIN_PROFILE = 1;
+
 function validateMovie(req, res, next) {
   const { error } = schema.validate(req.body);
   if (error) {
@@ -16,8 +18,9 @@ function validateToken(req, res, next) {
   if (!token) return res.sendStatus(401);
   token = token.replace("Bearer ", "");
   try {
-    const { userId } = jwt.verify(token, process.env.SECRET);
+    const { userId, profileId } = jwt.verify(token, process.env.SECRET);
     res.locals.userId = userId;
+    res.locals.profileId = profileId;
     next();
   } catch (err) {
     console.log(err);
@@ -25,7 +28,15 @@ function validateToken(req, res, next) {
   }
 }
 
+function validateAdmin(req, res, next) {
+  const { profileId } = res.locals;
+  if (profileId == ADMIN_PROFILE) {
+    next();
+  } else res.sendStatus(403);
+}
+
 module.exports = {
   validateMovie,
   validateToken,
+  validateAdmin,
 };

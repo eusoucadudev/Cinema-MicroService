@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const repository = require("../repository/repository");
+const loginSchema = require("../schemas/login");
 
 async function doLogin(req, res, next) {
   const email = req.body.email;
@@ -20,6 +21,28 @@ async function doLogin(req, res, next) {
   }
 }
 
+async function validateBlacklist(req, res, next) {
+  let token = req.headers["authorization"];
+  if (!token) return next();
+  token = token.replace("Bearer ", "");
+  const isBlacklisted = await repository.checkBlackList(token);
+
+  if (isBlacklisted) return res.sendStatus(401);
+  else next();
+}
+
+async function validateLoginSchema(req, res, next) {
+  const schema = require("../schemas/login");
+
+  const { error } = schema.validate(req.body);
+  if (error) {
+    const { details } = error;
+
+    return res.status(422).json(details.map((d) => d.message));
+  }
+  next();
+}
+
 async function validateToken(req, res, next) {
   let token = req.headers["authorization"];
   if (!token) return res.sendStatus(401);
@@ -36,12 +59,16 @@ async function validateToken(req, res, next) {
 }
 
 async function doLogout(req, res, next) {
-  const { userId } = res.locals;
-  res.send(`Logout user ${userId}`);
+  let token = req.headers["authorization"];
+  token = token.replace("Bearer ", "");
+  await repository.blacklistToken(token);
+  res.sendStatus(200);
 }
 
 module.exports = {
   doLogin,
   doLogout,
   validateToken,
+  validateBlacklist,
+  validateLoginSchema,
 };

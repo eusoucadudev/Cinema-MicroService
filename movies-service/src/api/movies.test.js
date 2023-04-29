@@ -37,7 +37,14 @@ test("GET /movies 200 OK", async () => {
   expect(response.body.length).toBeTruthy();
 });
 
-test("GET /movies 401 UNAUTHORIZED", async () => {
+test("GET /movies 401 UNAUTHORIZED (token error)", async () => {
+  const response = await request(app)
+    .get("/movies")
+    .set("authorization", `Bearer 3`);
+  expect(response.status).toEqual(401);
+});
+
+test("GET /movies 401 UNAUTHORIZED (error)", async () => {
   const response = await request(app).get("/movies");
   expect(response.status).toEqual(401);
 });
@@ -129,6 +136,14 @@ test("POST /movies/ 403 FORBIDDEN", async () => {
     .set("authorization", `Bearer ${guestToken}`)
     .send(movie);
   expect(response.status).toEqual(403);
+});
+
+test("POST /movies/ 422 UNPROCESSABLE ENTITY (empty)", async () => {
+  const response = await request(app)
+    .post("/movies/")
+    .set("Content-type", "application/json")
+    .set("authorization", `Bearer ${adminToken}`);
+  expect(response.status).toEqual(422);
 });
 
 test("POST /movies/ 422 UNPROCESSABLE ENTITY", async () => {

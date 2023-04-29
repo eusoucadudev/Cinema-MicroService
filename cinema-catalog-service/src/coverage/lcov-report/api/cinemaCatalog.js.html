@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>35/42</span>
+                <span class='fraction'>49/56</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>35/42</span>
+                <span class='fraction'>49/56</span>
             </div>
         
             
@@ -105,7 +105,26 @@
 <a name='L40'></a><a href='#L40'>40</a>
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -116,26 +135,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -147,47 +147,89 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = (app, repository) =&gt; {
-  app.get("/cities/:cityId/movies/movieId", async (req, res, next) =&gt; {
-<span class="cstat-no" title="statement not covered" >    const sessions = await repository.getMovieSessionsByCityId(</span>
-<span class="cstat-no" title="statement not covered" >      req.params.cityId,</span>
-<span class="cstat-no" title="statement not covered" >      req.params.movieId</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    if (!sessions) return res.sendStatus(404);</span>
-<span class="cstat-no" title="statement not covered" >    res.json(sessions);</span>
-<span class="cstat-no" title="statement not covered" >  });</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const { validateToken } = require("../middlewares/validationMiddlewares");
 &nbsp;
-  app.get("/cities/:cityId/movies", async (req, res, next) =&gt; {
+module.exports = (app, repository) =&gt; {
+  app.get(
+    "/cities/:cityId/movies/movieId",
+    validateToken,
+    async (req, res, next) =&gt; {
+<span class="cstat-no" title="statement not covered" >      const sessions = await repository.getMovieSessionsByCityId(</span>
+<span class="cstat-no" title="statement not covered" >        req.params.cityId,</span>
+<span class="cstat-no" title="statement not covered" >        req.params.movieId</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >      if (!sessions) return res.sendStatus(404);</span>
+<span class="cstat-no" title="statement not covered" >      res.json(sessions);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  );
+&nbsp;
+  app.get("/cities/:cityId/movies", validateToken, async (req, res, next) =&gt; {
     const movies = await repository.getMoviesByCityId(req.params.cityId);
     if (!movies) return res.sendStatus(404);
     res.json(movies);
   });
 &nbsp;
-  app.get("/cities/:cityId/cinemas", async (req, res, next) =&gt; {
+  app.get("/cities/:cityId/cinemas", validateToken, async (req, res, next) =&gt; {
     const cinemas = await repository.getCinemasByCityId(req.params.cityId);
     if (!cinemas) return res.sendStatus(404);
     res.json(cinemas);
   });
 &nbsp;
-  app.get("/cities", async (req, res, next) =&gt; {
+  app.get("/cities", validateToken, async (req, res, next) =&gt; {
     const cities = await repository.getAllCities();
     res.json(cities);
   });
 &nbsp;
-  app.get("/cinemas/:cinemaId/movies/:movieId", async (req, res, next) =&gt; {
-    const sessions = await repository.getMovieSessionsByCinemaId(
-      req.params.movieId,
-      req.params.cinemaId
-    );
-    if (!sessions) return res.sendStatus(404);
-    res.json(sessions);
-  });
+  app.get(
+    "/cinemas/:cinemaId/movies/:movieId",
+    validateToken,
+    async (req, res, next) =&gt; {
+      const sessions = await repository.getMovieSessionsByCinemaId(
+        req.params.movieId,
+        req.params.cinemaId
+      );
+      if (!sessions) return res.sendStatus(404);
+      res.json(sessions);
+    }
+  );
 &nbsp;
-  app.get("/cinemas/:cinemaId/movies", async (req, res, next) =&gt; {
-    const movies = await repository.getMoviesByCinemaId(req.params.cinemaId);
-    if (!movies) return res.sendStatus(404);
-    res.json(movies);
-  });
+  app.get(
+    "/cinemas/:cinemaId/movies",
+    validateToken,
+    async (req, res, next) =&gt; {
+      const movies = await repository.getMoviesByCinemaId(req.params.cinemaId);
+      if (!movies) return res.sendStatus(404);
+      res.json(movies);
+    }
+  );
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -196,7 +238,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-10T13:37:53.450Z
+                at 2023-04-29T15:31:14.441Z
             </div>
         <script src="../prettify.js"></script>
         <script>
